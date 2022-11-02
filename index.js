@@ -6,6 +6,7 @@ import checkAuth from './utils/checkAuth.js';
 import { authMe, login, register } from './controllers/UserController.js';
 import { create, getAll, getOne, remove, update } from './controllers/PostController.js';
 import checkValidationErorr from './utils/checkValidationErorr.js';
+import cors from 'cors';
 
 const app = express();
 
@@ -31,6 +32,8 @@ mongoose.connect('mongodb+srv://admin:1234567890@cluster0.qgbeskx.mongodb.net/bl
 const db = mongoose.connection;
 
 app.use(express.json());
+app.use(cors())
+
 app.use('/uploads', express.static('uploads'));
 
 app.post('/auth/login', loginValidation, checkValidationErorr, login)

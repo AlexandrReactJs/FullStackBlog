@@ -6,10 +6,7 @@ import bcrypt from 'bcrypt';
 
 export const register = async (req, res) => {
     try {
-        const errors = validationResult(req);
-        if (!errors.isEmpty()) {
-            return res.status(400).json(errors.array())
-        }
+        
         const password = req.body.password;
         const salt = await bcrypt.genSalt(10);
         const passwordHash = await bcrypt.hash(password, salt);
@@ -75,7 +72,8 @@ export const login = async (req, res) => {
 
         res.json({
             ...user._doc,
-            token
+            token,
+            statusCode: 0
         })
 
     } catch (error) {
@@ -97,7 +95,14 @@ export const authMe = async (req, res) => {
             })
         }
 
-        res.json({...user._doc})
+        const token = jwt.sign({
+            _id: user._id,
+        },
+            'secret21',
+            { expiresIn: '30d' }
+        )
+
+        res.json({...user._doc, token, statusCode: 0})
         
     } catch (error) {
         console.log(error);
