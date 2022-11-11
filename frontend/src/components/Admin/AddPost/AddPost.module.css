@@ -1,0 +1,29 @@
+.addPost{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+}
+
+.addTitle textarea{
+    border: unset;
+    resize: none;
+    border-bottom: 2px solid #333;
+    width: 100%;
+    border-radius: 10px;
+    font-size: 22px;
+    padding: 0 10px;
+    font-weight: 700;
+    margin-right: 10px;
+}
+
+
+.addText textarea{
+    border: unset;
+    resize: none;
+    border: 2px solid;
+    width: 100%;
+    padding: 0 10px;
+    height: 600px;
+    border-radius: 10px;
+}
