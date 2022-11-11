@@ -4,6 +4,8 @@ import axios from 'axios';
 import { setPosts } from "../../Redux/Slices/PostsSlice";
 import {useDispatch} from "react-redux";
 import {useSelector} from "react-redux"
+import Post from "./Post/Post";
+import {Link} from 'react-router-dom'
 
 const Posts = () => {
     const dispatch = useDispatch();
@@ -16,9 +18,13 @@ const Posts = () => {
     }, [])
 
     return (
-        <div>
+        <div className={styles.posts}>
             {
-                posts.map(el => <div><h1>{el.title}</h1> <div><h3>{el.text}</h3></div></div>)
+                posts.map(el => <div>
+                    <Link to={`/posts/${el._id}`}>
+                    <Post title={el.title} text={el.text} viewCount={el.viewCount}/>
+                    </Link>
+                </div>)
             }
         </div>
     )

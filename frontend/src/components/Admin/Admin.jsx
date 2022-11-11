@@ -13,7 +13,7 @@ const Admin = () => {
         axios.get('http://localhost:4444/auth/me', {headers: {Authorization: "Bearer " + JWTToken}}).then((res) => {
         if(res.data.statusCode === 0){
             disptach(setAdminData(res.data));
-           /* disptach(setIsAuth(true))*/
+            disptach(setIsAuth(true))
         }
         
 
@@ -21,7 +21,7 @@ const Admin = () => {
     }, [])
 
   return (
-    <div>
+    <div >
         {
             isAuth ? <AddPost/> : <Auth/>
         }

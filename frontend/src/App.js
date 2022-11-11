@@ -4,11 +4,13 @@ import Posts from './components/Posts/Posts';
 import Header from './components/Header/Header';
 import {Routes, Route, useNavigate, useLocation} from 'react-router-dom';
 import Admin from './components/Admin/Admin';
+import Sidebar from './components/Sidebar/Sidebar';
+import Fullpost from './components/Fullpost/Fullpost';
 
 function App() {
   const navigate = useNavigate();
   const location = useLocation()
-  console.log(location)
+
   React.useEffect(() => {
     if(location.pathname === '/') {
       navigate('/posts')
@@ -23,7 +25,9 @@ function App() {
         <Routes>
           <Route path='/posts' element={<Posts/>}/>
           <Route path='/admin' element={<Admin/>}/>
+          <Route path='/posts/:id' element={<Fullpost/>}/>
         </Routes>
+        <Sidebar/>
       </div>
     </div>
   );
