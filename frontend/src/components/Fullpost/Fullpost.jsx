@@ -15,7 +15,7 @@ const Fullpost = () => {
             axios.get(`http://localhost:4444/posts/${id}`).then((res) => {
                 dispatch(setPostData(res.data))
             })
-        }, []);
+        }, [dispatch, id]);
 
     if(postData){
         return (

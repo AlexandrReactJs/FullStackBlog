@@ -5,7 +5,8 @@ const initialState = {
   isAuth: false,
   addPostData: {
     title: 'asd',
-    text: null
+    text: null,
+    tags: ['dsd']
   }
 
 }
@@ -22,10 +23,10 @@ export const adminSlice = createSlice({
    },
 
    setPostTitle: (state, action) => {
-    state.addPostData.title = action.payload.title
+    state.addPostData.title = action.payload
    },
    setPostText: (state, action) => {
-    state.addPostData.text = action.payload.text
+    state.addPostData.text = action.payload
    }
    
   },

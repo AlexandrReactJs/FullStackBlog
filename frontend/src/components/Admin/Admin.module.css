@@ -1,0 +1,18 @@
+.nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.nav a {
+    color: black;
+    margin-right: 10px;
+    font-weight: 600;
+    transition: all 0.2s linear;
+    padding-bottom: 3px;
+}
+
+.nav a:hover {
+    border-bottom: 2px solid black;
+}

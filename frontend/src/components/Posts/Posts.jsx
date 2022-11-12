@@ -15,7 +15,7 @@ const Posts = () => {
         axios.get('http://localhost:4444/posts').then((res) => {
             dispatch(setPosts(res.data));
         })
-    }, [])
+    }, [dispatch])
 
     return (
         <div className={styles.posts}>

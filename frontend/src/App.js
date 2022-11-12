@@ -24,10 +24,13 @@ function App() {
       <div className='app-wrapper'>
         <Routes>
           <Route path='/posts' element={<Posts/>}/>
-          <Route path='/admin' element={<Admin/>}/>
+          <Route path='/admin/*' element={<Admin/>}/>
           <Route path='/posts/:id' element={<Fullpost/>}/>
         </Routes>
+    
         <Sidebar/>
+      
+        
       </div>
     </div>
   );

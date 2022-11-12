@@ -2,8 +2,7 @@ import React from 'react';
 import { useFormik } from 'formik';
 import axios from 'axios';
 import {useDispatch} from 'react-redux';
-import { setIsAuth } from '../../../Redux/Slices/AdminSlice';
-import { setAdminData } from '../../../Redux/Slices/AdminSlice';
+import { setIsAuth } from '../../../Redux/Slices/AdminSlices/AdminSlice';
 import styles from './Auth.module.css';
 
 const Auth = () => {
