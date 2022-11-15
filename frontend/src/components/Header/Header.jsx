@@ -6,7 +6,7 @@ const Header = () => {
         <div className={styles.Header}>
             <div className={styles.headerWrapper}>
                 <div className={styles.headerLogo}>
-                    <h3>GAVRILOFF BLOG</h3>
+                    <h3>BLOG</h3>
                 </div>
                 {
                 /*<div className={styles.auth}>

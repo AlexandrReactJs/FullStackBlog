@@ -7,7 +7,8 @@ import { setPostText, setPostTitle } from '../../../Redux/Slices/AdminSlices/Adm
 
 const AddPost = () => {
     const dispatch = useDispatch();
-    const JWTToken = useSelector(state => state.adminSlice.adminData.token)
+
+    const JWTToken = document.cookie;
 
     const titleValue = useSelector(state => state.adminSlice.addPostData.title)
     const textValue = useSelector(state => state.adminSlice.addPostData.text)
@@ -18,7 +19,6 @@ const AddPost = () => {
 
     const addPost = (body) => {
         axios.post('http://localhost:4444/posts', body, { headers: { Authorization: "Bearer " + JWTToken } }).then((res) => {
-
             console.log(res);
         })
     
@@ -44,9 +44,10 @@ const AddPost = () => {
             <div className={styles.addText}>
                 <textarea ref={textRef} value={textValue} onChange={onChangeText} placeholder='Добавить текст'/>
             </div>
-            <button onClick={() => {
-                addPost(postData)
-            }}>dasd</button>
+            <div>
+                <button className={styles.addPostButton} onClick={() => {addPost(postData)}}>Добавить</button>
+            </div>
+            
         </div>
     )
 }

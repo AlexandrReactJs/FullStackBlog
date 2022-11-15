@@ -76,23 +76,14 @@ export const getOne = async (req, res) => {
 
 export const remove = async (req, res) => {
     const postId = req.params.id;
-
     await postModel.findByIdAndRemove(
         {
             _id: postId
         },
-        (err, doc) => {
-            if(err){
-                console.log(err);
-                res.json({
-                    message: "Не удалось удалить статью"
-                })
-            }
-
-            res.json({
-                success: true
-            });
-        }
+         
+        res.json({
+            statusCode: 0
+        })
     );
 }
 

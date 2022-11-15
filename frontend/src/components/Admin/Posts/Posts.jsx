@@ -5,6 +5,7 @@ import { setPosts } from '../../../Redux/Slices/AdminSlices/AdminPostsSlice'
 import {useDispatch, useSelector} from 'react-redux';
 import axios from "axios"
 
+
 const Posts = () => {
     const dispatch = useDispatch();
 
@@ -22,7 +23,7 @@ const Posts = () => {
     }else{
         return (
             <div className={styles.Posts}>
-                {posts.map(el => <Post title={el.title} text={el.text} viewsCount={el.viewCount}/>)}
+                {posts.map(el => <Post id={el._id} title={el.title} text={el.text} viewsCount={el.viewCount}/>)}
             </div>
           )
     }

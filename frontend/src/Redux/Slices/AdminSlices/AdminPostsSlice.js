@@ -10,12 +10,18 @@ export const adminPostsSlice = createSlice({
   reducers: {
     setPosts: (state, action) => {
         state.adminPosts = action.payload;
+    },
+    removePost: (state, action) => {
+      const found = state.adminPosts.find(elm => elm._id === action.payload);
+      if(found){
+        state.adminPosts = state.adminPosts.filter(item => item !== found)
+      }
     }
    
   },
 })
 
 
-export const { setPosts } = adminPostsSlice.actions
+export const { setPosts, removePost} = adminPostsSlice.actions
 
 export default adminPostsSlice.reducer

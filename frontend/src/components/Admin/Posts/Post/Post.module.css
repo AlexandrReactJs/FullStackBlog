@@ -1,0 +1,62 @@
+.Post{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px 10px;
+}
+
+.Post img{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.postEditButtons{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.postEditButtons img{
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+    border: 1px solid #333;
+    padding: 5px 5px;
+    border-radius: 4px;
+    transition: all 0.2s linear;
+}
+
+.postEditButtons img:hover{
+    padding: 8px 8px;
+}
+
+.postTitle{
+    margin-bottom: 10px;
+}
+
+
+.postText{
+    margin-bottom: 15px;
+}
+
+.postViews{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.postViews img{
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    opacity: 0.6;
+}
+
+
+.postViews p{
+    font-weight: 600;
+
+}

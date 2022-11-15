@@ -3,12 +3,15 @@ import postsSlice from "./Slices/PostsSlice";
 import adminSlice from './Slices/AdminSlices/AdminSlice';
 import fullPostSlice from './Slices/FullPostSlice';
 import adminPostsSlice from './Slices/AdminSlices/AdminPostsSlice';
+import adminRefactoringPostSlice from './Slices/AdminSlices/AdminRefactoringPostSlice';
+
 
 export const store = configureStore({
   reducer: {
     postsSlice,
     adminSlice,
     fullPostSlice,
-    adminPostsSlice
+    adminPostsSlice,
+    adminRefactoringPostSlice
   },
 })

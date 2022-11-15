@@ -1,11 +1,38 @@
 import React from 'react'
 import styles from './Post.module.css'
+import deleteIcon from '../../../../assets/icons/delete.png';
+import editIcon from '../../../../assets/icons/edit.png'
+import viewsIcon from '../../../../assets/icons/eye.png';
+import axios from 'axios';
+import { removePost } from '../../../../Redux/Slices/AdminSlices/AdminPostsSlice';
+import {useDispatch} from 'react-redux';
+import {useNavigate} from 'react-router-dom'
 
+const Post = ({title, text, viewsCount, id}) => {
+    const dispatch = useDispatch();
 
-const Post = ({title, text, viewsCount}) => {
+    const navigate = useNavigate();
+
+    const JWTToken = document.cookie;
+    const deletePost =  () => {
+        axios.delete(`http://localhost:4444/posts/${id}`, { headers: { Authorization: "Bearer " + JWTToken } } ).then((res) => {
+            if(res.data.statusCode === 0){
+                dispatch(removePost(id))
+            }
+        })
+
+    }
+
   return (
     <div className={styles.Post}>
-        <img src="https://i.pinimg.com/originals/df/6a/9e/df6a9e89bb01c9fcabb9e78275e1b72e.jpg" alt="img" />
+        <div className={styles.postEditButtons}>
+            <div className={styles.editPost}>
+                <img onClick={() => {navigate(`/admin/postRefactoring/${id}`)}} src={editIcon} alt="" />
+            </div>
+            <div className={styles.deletePost}>
+                <img onClick={() => {deletePost()}} src={deleteIcon} alt="" />
+            </div>
+        </div>
         <div className={styles.postTitle}>
             <h3>{title}</h3>
         </div>
@@ -14,7 +41,9 @@ const Post = ({title, text, viewsCount}) => {
                 {text}
             </p>
         </div>
+        <img src="https://i.pinimg.com/originals/df/6a/9e/df6a9e89bb01c9fcabb9e78275e1b72e.jpg" alt="img" />
         <div className={styles.postViews}>
+            <img src={viewsIcon} alt="" />
             <p>
                 {viewsCount}
             </p>

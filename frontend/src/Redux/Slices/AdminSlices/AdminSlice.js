@@ -4,7 +4,7 @@ const initialState = {
   adminData: null,
   isAuth: false,
   addPostData: {
-    title: 'asd',
+    title: '',
     text: null,
     tags: ['dsd']
   }

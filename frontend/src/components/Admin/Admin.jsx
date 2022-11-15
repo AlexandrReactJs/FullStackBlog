@@ -8,6 +8,7 @@ import { setAdminData, setIsAuth } from '../../Redux/Slices/AdminSlices/AdminSli
 import { Routes, Route } from 'react-router-dom';
 import AddPost from './AddPost/AddPost';
 import AdminSidebar from './AdminSidebar/AdminSidebar';
+import RefactoringPost from './RefactoringPost/RefactoringPost';
 
 const Admin = () => {
     const disptach = useDispatch();
@@ -35,6 +36,7 @@ const Admin = () => {
                         <Routes>
                             <Route path='/addPost' element={<AddPost />} />
                             <Route path='/posts' element={<Posts />} />
+                            <Route path='/postRefactoring/:id' element={<RefactoringPost/>}/>
                         </Routes>
 
                     </div> : <Auth />
