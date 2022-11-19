@@ -7,6 +7,8 @@ import axios from 'axios';
 import { removePost } from '../../../../Redux/Slices/AdminSlices/AdminPostsSlice';
 import {useDispatch} from 'react-redux';
 import {useNavigate} from 'react-router-dom'
+import renderHTML from 'react-render-html';
+
 
 const Post = ({title, text, viewsCount, id}) => {
     const dispatch = useDispatch();
@@ -37,9 +39,9 @@ const Post = ({title, text, viewsCount, id}) => {
             <h3>{title}</h3>
         </div>
         <div className={styles.postText}>
-            <p>
-                {text}
-            </p>
+            
+                {renderHTML(text)}
+            
         </div>
         <img src="https://i.pinimg.com/originals/df/6a/9e/df6a9e89bb01c9fcabb9e78275e1b72e.jpg" alt="img" />
         <div className={styles.postViews}>

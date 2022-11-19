@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
 import styles from './AddPost.module.css';
 import { setPostText, setPostTitle } from '../../../Redux/Slices/AdminSlices/AdminSlice';
+import RichEditorExample from './Editor/Editor';
 
 
 const AddPost = () => {
@@ -15,7 +16,6 @@ const AddPost = () => {
     const postData = useSelector(state => state.adminSlice.addPostData)
 
     const titleRef = React.useRef(null);
-    const textRef = React.useRef(null);
 
     const addPost = (body) => {
         axios.post('http://localhost:4444/posts', body, { headers: { Authorization: "Bearer " + JWTToken } }).then((res) => {
@@ -30,8 +30,8 @@ const AddPost = () => {
     }
 
 
-    const onChangeText = () => {
-        const text = textRef.current.value;
+    const onChangeText = (text) => {
+        /*const text = textRef.current.value;*/
         dispatch(setPostText(text))
     }
 
@@ -41,12 +41,20 @@ const AddPost = () => {
             <div className={styles.addTitle}>
                 <textarea ref={titleRef} value={titleValue} onChange= {onChangeTitle} placeholder='Добавить заголовок'/>
             </div>
+            {/*<div className={styles.addTitle}>
+                <textarea ref={titleRef} value={titleValue} onChange= {onChangeTitle} placeholder='Добавить заголовок'/>
+            </div>
             <div className={styles.addText}>
                 <textarea ref={textRef} value={textValue} onChange={onChangeText} placeholder='Добавить текст'/>
             </div>
             <div>
                 <button className={styles.addPostButton} onClick={() => {addPost(postData)}}>Добавить</button>
-            </div>
+    </div>*/}
+
+                <RichEditorExample onChangeText={onChangeText} textValue={textValue}/>
+                <div>
+                <button className={styles.addPostButton} onClick={() => {addPost(postData)}}>Добавить</button>
+                </div>
             
         </div>
     )
