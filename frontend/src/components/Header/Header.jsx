@@ -1,12 +1,14 @@
-import React from 'react'
-import styles from './Header.module.css'
+import React from 'react';
+import styles from './Header.module.css';
+import {Link} from 'react-router-dom';
 
 const Header = () => {
     return (
         <div className={styles.Header}>
             <div className={styles.headerWrapper}>
                 <div className={styles.headerLogo}>
-                    <h3>GAVRILOFF BLOG</h3>
+                    <Link className={styles.headerLink} to='/posts'><h3>FULLSTACK BLOG</h3></Link>
+                    
                 </div>
                 {
                 /*<div className={styles.auth}>
