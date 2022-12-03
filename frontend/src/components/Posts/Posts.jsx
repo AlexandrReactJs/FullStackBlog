@@ -11,9 +11,9 @@ const Posts = () => {
     return (
         <div className={styles.posts}>
             {
-                posts.map(el => <div>
+                posts.map(el => <div className={styles.post}>
                     <Link to={`/posts/${el._id}`}>
-                    <Post title={el.title} text={el.text} viewCount={el.viewCount}/>
+                    <Post title={el.title} text={el.text} viewCount={el.viewCount} imageUrl={el.imageUrl}/>
                     </Link>
                 </div>)
             }

@@ -1,13 +1,17 @@
 import React from 'react';
 import styles from './Header.module.css';
 import {Link} from 'react-router-dom';
-
+/*--openssl-legacy-provider */
 const Header = () => {
+    const [opacity, setOpacity] = React.useState(0)
+    React.useEffect(() => {
+        setOpacity(1)
+    }, [])
     return (
-        <div className={styles.Header}>
+        <div className={styles.Header} style={{opacity: `${opacity}`}}>
             <div className={styles.headerWrapper}>
                 <div className={styles.headerLogo}>
-                    <Link className={styles.headerLink} to='/posts'><h3>FULLSTACK BLOG</h3></Link>
+                    <Link className={styles.headerLink} to='/posts'><h3>BLOG</h3></Link>
                     
                 </div>
                 {

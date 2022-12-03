@@ -6,7 +6,8 @@ const initialState = {
   addPostData: {
     title: '',
     text: null,
-    tags: ['dsd']
+    tags: ['dsd'],
+    imageUrl: {}
   }
 
 }
@@ -27,12 +28,16 @@ export const adminSlice = createSlice({
    },
    setPostText: (state, action) => {
     state.addPostData.text = action.payload
+   },
+
+   setImageUrl: (state, action) => {
+    state.addPostData.imageUrl = action.payload;
    }
    
   },
 })
 
 
-export const { setAdminData, setIsAuth, setPostTitle, setPostText } = adminSlice.actions
+export const { setAdminData, setIsAuth, setPostTitle, setPostText, setImageUrl } = adminSlice.actions
 
 export default adminSlice.reducer

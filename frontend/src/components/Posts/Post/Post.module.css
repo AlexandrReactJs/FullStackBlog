@@ -1,12 +1,12 @@
 .post{
     display: flex;
     flex-direction: column;
-    box-shadow: 0 0 20px -8px rgb(152, 152, 152);
+    background-color: #fff;
     border-radius: 10px;
-    margin-bottom: 40px;
     padding: 10px 10px;
     color:black;
 }
+
 
 ul{
     margin-left: 20px;
@@ -21,9 +21,14 @@ img{
     border-radius: 10px;
 }
 
-.postInfo{
 
+.text{
+    -webkit-line-clamp: 4; /* Число отображаемых строк */
+    display: -webkit-box; /* Включаем флексбоксы */
+    -webkit-box-orient: vertical; /* Вертикальная ориентация */
+    overflow: hidden; 
 }
+
 
 .postInfo h1{
     font-size: 22px;

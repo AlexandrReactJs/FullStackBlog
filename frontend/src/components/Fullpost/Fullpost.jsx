@@ -7,7 +7,7 @@ const Fullpost = ({postData}) => {
     if(postData){
         return (
             <div className={styles.Fullpost}>
-                <img src="https://i.pinimg.com/originals/df/6a/9e/df6a9e89bb01c9fcabb9e78275e1b72e.jpg" alt="" />
+                <img src={`http://localhost:4444${postData.imageUrl}`} alt="" />
                 <div className={styles.postInfo}>
                     <h1>{postData.title}</h1>
                     {renderHTML(postData.text)}
