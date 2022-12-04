@@ -1,8 +1,6 @@
 .post{
     display: flex;
     flex-direction: column;
-    background-color: #fff;
-    border-radius: 10px;
     padding: 10px 10px;
     color:black;
 }
@@ -19,6 +17,7 @@ ul{
 img{
     width: 100%;
     border-radius: 10px;
+    height: 300px;
 }
 
 
@@ -35,10 +34,14 @@ img{
 }
 
 
+
+
+
 .viewsCount{
     display: flex;
     flex-direction: row;
     align-items: center;
+    
 }
 
 .viewsCount p{

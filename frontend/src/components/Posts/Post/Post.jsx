@@ -5,7 +5,6 @@ import renderHTML from 'react-render-html'
 
 const Post = ({ title, text, viewCount, imageUrl }) => {
 
-    console.log(process.env)
    
     return (
         <div className={styles.post}>
