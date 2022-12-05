@@ -11,7 +11,7 @@ const Header = () => {
         <div className={styles.Header} style={{opacity: `${opacity}`}}>
             <div className={styles.headerWrapper}>
                 <div className={styles.headerLogo}>
-                    <Link className={styles.headerLink} to='/posts'><h3>BLOG</h3></Link>
+                    <Link className={styles.headerLink} to='/posts'><h3>GAVRILOFF BLOG</h3></Link>
                     
                 </div>
                 {
