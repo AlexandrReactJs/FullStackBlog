@@ -22,6 +22,12 @@ export const postsSlice = createSlice({
   name: 'posts',
   initialState,
 
+  reducers:{
+    setPosts: (state, action) => {
+      state.posts = action.payload
+    }
+  },
+
   extraReducers: {
     [fetchPosts.fulfilled]: (state, action) => {
       state.posts = action.payload;

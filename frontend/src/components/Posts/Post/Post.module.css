@@ -1,10 +1,18 @@
 .post{
     display: flex;
     flex-direction: column;
-    padding: 10px 10px;
+    padding: 20px 20px;
     color:black;
+    transition: all 0.2s ease-out;
+    border-radius: 10px;
+
 }
 
+.post:hover{
+    background-color: black;
+    color: #fff;
+    
+}
 
 ul{
     margin-left: 20px;
@@ -25,12 +33,14 @@ img{
     -webkit-line-clamp: 4; /* Число отображаемых строк */
     display: -webkit-box; /* Включаем флексбоксы */
     -webkit-box-orient: vertical; /* Вертикальная ориентация */
-    overflow: hidden; 
+    overflow: hidden;
+    margin-bottom: 10px;
 }
 
 
 .postInfo h1{
     font-size: 22px;
+    margin-bottom: 10px;
 }
 
 

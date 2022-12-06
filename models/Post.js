@@ -29,6 +29,9 @@ const PostSchema = new mongoose.Schema({
 
     imageUrl: {
         type: String,
+    },
+    category: {
+        type: String,
     }
 }, {timestamps: true})
 

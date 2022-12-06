@@ -12,7 +12,9 @@ const FullpostContainer = () => {
     const { id } = useParams();
 
         React.useEffect(() => {
+
             dispatch(fetchFullPost(id))
+            
         }, [dispatch, id]);
 
 

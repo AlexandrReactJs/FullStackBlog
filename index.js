@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 import { registerValidation, loginValidation, postCreateValidation } from './validations/validations.js';
 import checkAuth from './utils/checkAuth.js';
 import { authMe, login, register } from './controllers/UserController.js';
-import { create, getAll, getOne, remove, update } from './controllers/PostController.js';
+import { create, getAll, getOne, getPostsCategory, remove, update } from './controllers/PostController.js';
 import checkValidationErorr from './utils/checkValidationErorr.js';
 import cors from 'cors';
 
@@ -50,6 +50,7 @@ app.post('/upload', checkAuth, upload.single('image'), (req, res) => {
 })
 
 app.get('/posts', getAll)
+app.get('/postsCategory/:category', getPostsCategory)
 app.get('/posts/:id', getOne)
 app.post('/posts', checkAuth, postCreateValidation, checkValidationErorr, create)
 app.delete('/posts/:id', checkAuth, remove)

@@ -1,5 +1,20 @@
 import postModel from '../models/Post.js'
 
+export const getPostsCategory = async (req, res) => {
+    try {
+        const category = req.params.category;
+
+        const post = await postModel.find({category})
+        res.send(post)
+        
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({
+            message: 'Не удалось получить посты'
+        })
+    }
+}
+
 export const create = async (req, res) => {
     try {
         const doc = new postModel({
@@ -8,6 +23,7 @@ export const create = async (req, res) => {
             imageUrl: req.body.imageUrl,
             tags: req.body.tags,
             user: req.userId,
+            category: req.body.category,
         })
 
         const post = await doc.save();

@@ -9,27 +9,29 @@ const Sidebar = () => {
     setOpacity(1)
   }, [])
 
+
+
   return (
     <div className={styles.Sidebar} style={{opacity: `${opacity}`}}>
       <div className={styles.sidebarContainer}>
         <div className={styles.link}>
-          <Link>Софт</Link>
+          <Link to='/postsCategory/soft'>Софт</Link>
           <div className={styles.underline}></div>
         </div>
         <div className={styles.link}>
-          <Link>Книги</Link>
+          <Link to='/postsCategory/books'>Книги</Link>
           <div className={styles.underline}></div>
         </div>
         <div className={styles.link}>
-          <Link>Новости</Link>
+          <Link to='/postsCategory/news'>Новости</Link>
           <div className={styles.underline}></div>
         </div>
         <div className={styles.link}>
-          <Link>Гаджеты</Link>
+          <Link to='/postsCategory/gagets'>Гаджеты</Link>
           <div className={styles.underline}></div>
         </div>
         <div className={styles.link}>
-          <Link>Хакинг</Link>
+          <Link to='/postsCategory/hacking'>Хакинг</Link>
           <div className={styles.underline}></div>
         </div>
       </div>

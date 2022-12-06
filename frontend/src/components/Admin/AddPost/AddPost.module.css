@@ -47,3 +47,26 @@
     color: #fff;
     background-color: black;
 }
+
+.categories{
+    display: flex;
+    flex-direction: row;
+    margin:20px 0;
+}
+
+.categories p{
+    margin-right: 20px;
+    padding: 10px 20px;
+    transition: all 0.2s linear;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.categories p:hover{
+    background-color: black;
+    color: #fff;
+}
+
+.active{
+    border-bottom: 2px solid black;
+}

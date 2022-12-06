@@ -6,6 +6,7 @@ import Admin from './components/Admin/Admin';
 import Sidebar from './components/Sidebar/Sidebar';
 import FullpostContainer from './components/Fullpost/FullpostContainer';
 import PostsContainer from './components/Posts/PostsContainer';
+import PostsCategoryContainer from './components/PostsCategory/PostsCategoryContainer';
 
 function App() {
   const navigate = useNavigate();
@@ -28,6 +29,7 @@ function App() {
           <Route path='/posts' element={<PostsContainer />} />
           <Route path='/admin/*' element={<Admin />} />
           <Route path='/posts/:id' element={<FullpostContainer />} />
+          <Route path='/postsCategory/:category' element={<PostsCategoryContainer/>}/>
         </Routes>
       </div>
     </div>
