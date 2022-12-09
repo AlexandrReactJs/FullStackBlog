@@ -1,6 +1,6 @@
 .Sidebar {
     opacity: 0;
-    background-color: black;
+    background-color: rgb(43, 43, 43);
     height: 60px;
     transition: all 0.5s linear;
 }

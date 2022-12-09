@@ -6,6 +6,7 @@
     transition: all 0.3s ease-in;
 }
 
+
 .headerWrapper{
     width: 100%;
     max-width: 1200px;
@@ -17,13 +18,17 @@
 }
 
 .headerLogo{
-    background-color: black;
+    background-color: rgb(39, 39, 39);
     padding:10px;
     color: #fff;
 
 }
 
+
 .headerLink{
     color: #fff;
 }
 
+.Header:hover ~ .Sidebar{
+    opacity: 0;
+}

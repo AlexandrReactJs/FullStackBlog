@@ -1,3 +1,6 @@
 .Posts{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
     padding: 0 20px;
 }

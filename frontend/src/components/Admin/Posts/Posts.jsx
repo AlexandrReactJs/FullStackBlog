@@ -23,7 +23,7 @@ const Posts = () => {
     }else{
         return (
             <div className={styles.Posts}>
-                {posts.map(el => <Post id={el._id} title={el.title} text={el.text} viewsCount={el.viewCount}/>)}
+                {posts.map(el => <Post id={el._id} title={el.title} text={el.text} viewsCount={el.viewCount} imageUrl={el.imageUrl}/>)}
             </div>
           )
     }

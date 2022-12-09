@@ -26,22 +26,25 @@ const Admin = () => {
     }, [JWTToken, disptach])
 
     return (
-        <div >
+        <>
             {
                 isAuth ?
-                    <div>
+                    <div className={styles.admin}>
                         <div className={styles.nav}>
-                            <AdminSidebar/>
+                            <AdminSidebar />
                         </div>
-                        <Routes>
-                            <Route path='/addPost' element={<AddPost />} />
-                            <Route path='/posts' element={<Posts />} />
-                            <Route path='/postRefactoring/:id' element={<RefactoringPost/>}/>
-                        </Routes>
+                        <div className={styles.adminWrapper}>
+                            
+                            <Routes>
+                                <Route path='/addPost' element={<AddPost />} />
+                                <Route path='/posts' element={<Posts />} />
+                                <Route path='/postRefactoring/:id' element={<RefactoringPost />} />
+                            </Routes>
 
+                        </div>
                     </div> : <Auth />
             }
-        </div>
+        </>
     )
 }
 

@@ -1,15 +1,16 @@
 .post{
     display: flex;
     flex-direction: column;
-    padding: 20px 20px;
+    padding: 20px 10px;
     color:black;
     transition: all 0.2s ease-out;
     border-radius: 10px;
+    
 
 }
 
 .post:hover{
-    background-color: black;
+    background-color: rgb(39, 39, 39);
     color: #fff;
     
 }

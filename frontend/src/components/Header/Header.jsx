@@ -14,11 +14,7 @@ const Header = () => {
                     <Link className={styles.headerLink} to='/posts'><h3>GAVRILOFF BLOG</h3></Link>
                     
                 </div>
-                {
-                /*<div className={styles.auth}>
-                    <a className={styles.login} href="#">Вход</a>
-                    <a className={styles.register} href="#">Регистрация</a>
-                </div>*/}
+                
             </div>
         </div>
     )

@@ -2,7 +2,6 @@ import './App.css';
 import React from 'react';
 import Header from './components/Header/Header';
 import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
-import Admin from './components/Admin/Admin';
 import Sidebar from './components/Sidebar/Sidebar';
 import FullpostContainer from './components/Fullpost/FullpostContainer';
 import PostsContainer from './components/Posts/PostsContainer';
@@ -27,7 +26,6 @@ function App() {
       <div className='app-wrapper'>
         <Routes>
           <Route path='/posts' element={<PostsContainer />} />
-          <Route path='/admin/*' element={<Admin />} />
           <Route path='/posts/:id' element={<FullpostContainer />} />
           <Route path='/postsCategory/:category' element={<PostsCategoryContainer/>}/>
         </Routes>

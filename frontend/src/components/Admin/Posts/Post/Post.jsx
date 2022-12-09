@@ -10,7 +10,7 @@ import {useNavigate} from 'react-router-dom'
 import renderHTML from 'react-render-html';
 
 
-const Post = ({title, text, viewsCount, id}) => {
+const Post = ({title, text, viewsCount, id, imageUrl}) => {
     const dispatch = useDispatch();
 
     const navigate = useNavigate();
@@ -43,7 +43,7 @@ const Post = ({title, text, viewsCount, id}) => {
                 {renderHTML(text)}
             
         </div>
-        <img src="https://i.pinimg.com/originals/df/6a/9e/df6a9e89bb01c9fcabb9e78275e1b72e.jpg" alt="img" />
+        <img src={`http://localhost:4444${imageUrl}`} alt="img" />
         <div className={styles.postViews}>
             <img src={viewsIcon} alt="" />
             <p>

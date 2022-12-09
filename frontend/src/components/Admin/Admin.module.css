@@ -1,12 +1,21 @@
+.adminWrapper{
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+
 .nav{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    padding: 10px 0;
     margin-bottom: 20px;
+    background-color: rgb(39, 39, 39);
 }
 
 .nav a {
-    color: black;
+    color: #fff;
     margin-right: 10px;
     font-weight: 600;
     transition: all 0.2s linear;
@@ -14,5 +23,9 @@
 }
 
 .nav a:hover {
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid #fff;
+}
+
+.Sidebar_sidebarContainer__VSPK2{
+    background-color: #fff;
 }
