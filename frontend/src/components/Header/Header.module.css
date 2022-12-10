@@ -18,24 +18,16 @@
 }
 
 .headerLogo {
-    display: flex;
+    background-color: rgb(39, 39, 39);
+    padding: 10px;
+    color: #fff;
 
 }
 
 
 .headerLink {
-    background-color: rgb(39, 39, 39);
-    padding: 10px;
     color: #fff;
-    transition: all 0.2s linear;
 }
-
-.headerLink:hover{
-    background-color: #fff;
-    color: rgb(39, 39, 39);
-    border: 1px solid rgb(39, 39, 39);
-}
-
 
 .Header:hover~.Sidebar {
     opacity: 0;
