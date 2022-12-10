@@ -1,0 +1,22 @@
+.Fullpost{
+    display: flex;
+    flex-direction: column;
+}
+
+.Fullpost img{
+    height: 100%;
+}
+
+.title{
+    display: inline-block;
+    
+}
+
+.underline{
+    height: 2px;
+    background-color: rgb(39, 39, 39);
+}
+
+.postInfo p{
+    font-family: 'Roboto', sans-serif;
+}

@@ -1,4 +1,4 @@
-.Header{
+.Header {
     background-color: #fff;
     width: 100%;
     opacity: 0;
@@ -7,7 +7,7 @@
 }
 
 
-.headerWrapper{
+.headerWrapper {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
@@ -17,18 +17,20 @@
     align-items: center;
 }
 
-.headerLogo{
+.headerLogo {
     background-color: rgb(39, 39, 39);
-    padding:10px;
+    padding: 10px;
     color: #fff;
 
 }
 
 
-.headerLink{
+.headerLink {
     color: #fff;
 }
 
-.Header:hover ~ .Sidebar{
+.Header:hover~.Sidebar {
     opacity: 0;
 }
+
+

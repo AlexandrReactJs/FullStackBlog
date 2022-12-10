@@ -9,3 +9,11 @@
 .post{
     
 }
+
+
+@media (max-width: 700px) {
+    .posts{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
