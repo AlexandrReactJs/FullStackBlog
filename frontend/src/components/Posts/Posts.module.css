@@ -2,13 +2,16 @@
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
-    
+    grid-column-gap: 20px;
 }
 
 .post{
-    
+    margin-bottom: 10px;
+    padding: 20px 10px;
+    transition: all 0.2s linear;
 }
+
+
 
 
 @media (max-width: 700px) {
