@@ -39,12 +39,16 @@ export const adminSlice = createSlice({
    },
    addTag: (state, action) => {
     state.addPostData.tags.push(action.payload)
+   },
+   removeTag: (state, action) => {
+    const found = state.addPostData.tags.find(item => item === action.payload)
+    state.addPostData.tags = state.addPostData.tags.filter(item => item !== found)
    }
    
   },
 })
 
 
-export const { setAdminData, setIsAuth, setPostTitle, setPostText, setImageUrl, setCategoryPost, addTag } = adminSlice.actions
+export const { setAdminData, setIsAuth, setPostTitle, setPostText, setImageUrl, setCategoryPost, addTag, removeTag } = adminSlice.actions
 
 export default adminSlice.reducer

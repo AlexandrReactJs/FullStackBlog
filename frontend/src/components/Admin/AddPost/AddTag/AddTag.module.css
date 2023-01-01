@@ -1,0 +1,77 @@
+
+.addTagWrapper{
+    display: inline-flex;
+    flex-direction: row;
+    margin-bottom: 40px;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.tags{
+    display: flex;
+    flex-direction: row;
+    margin-right: 20px;
+}
+
+
+.tags p{
+    margin-right: 5px;
+    color: #10bf34;
+    font-weight: 600;
+    border: 2px solid #10bf34;
+    padding: 2px 5px;
+
+}
+
+.addTag{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.addTag textarea{
+    height: 30px;
+    resize: none;
+    margin-right: 10px;
+    border: inset;
+    outline: none;
+    background: transparent;
+    border: 2px solid black;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.addTag button{
+    border: unset;
+    font-weight: 600;
+    font-size: 16px;
+    color: #10bf34;
+    border-bottom: 2px solid #10bf34;
+    padding: 5px 10px;
+    transition: all 0.1s ease-in;
+}
+
+.addTag button:hover{
+    cursor: pointer;
+    border: 2px solid #10bf34;
+}
+
+.tag{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.removeTag img{
+    width: 25px;
+    height: 25px;
+    opacity: 0.5;
+    transition: all 0.2s linear;
+}
+
+.removeTag img:hover{
+    cursor: pointer;
+    opacity: 0.8;
+}

@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom'
 const Post = ({ title, text, tags, imageUrl, postId, createdAt }) => {
 
     let createdAtModified = createdAt.split('T')
+    
 
     return (
         <>
@@ -18,7 +19,7 @@ const Post = ({ title, text, tags, imageUrl, postId, createdAt }) => {
                                 <h1 className={styles.title}>{title}</h1>
                                 <div className={styles.underline}></div>
                             </div>
-                            <p className={styles.createdAt}>{createdAtModified[0]}</p>
+                            <p className={styles.createdAt}>{createdAtModified[0].replaceAll('-','.')}</p>
                         </div>
 
                         <div className={styles.text}>{renderHTML(text)}</div>

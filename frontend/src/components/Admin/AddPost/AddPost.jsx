@@ -2,8 +2,9 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
 import styles from './AddPost.module.css';
-import { setPostText, setPostTitle, setImageUrl, setCategoryPost, addTag } from '../../../Redux/Slices/AdminSlices/AdminSlice';
+import { setPostText, setPostTitle, setImageUrl, setCategoryPost } from '../../../Redux/Slices/AdminSlices/AdminSlice';
 import RichEditorExample from './Editor/Editor';
+import AddTag from './AddTag/AddTag';
 
 
 const AddPost = () => {
@@ -15,8 +16,7 @@ const AddPost = () => {
 
     const [file, setFile] = React.useState()
 
-    const titleRef = React.useRef(null);
-    const addTagRef = React.useRef(null);
+    const titleRef = React.useRef(null)
 
 
     const categories = ['soft', 'books', 'news', 'gagets', 'hacking']
@@ -74,18 +74,8 @@ const AddPost = () => {
                     }}>{el}</p>)
                 }
             </div>
+            <AddTag/>
 
-            <div className={styles.addTagWrapper}>
-                <div className={styles.tags}>
-                    {
-                        postData.tags.map(el => <p>{el}</p>)
-                    }
-                </div>
-                <div className={styles.addTag}>
-                    <textarea ref={addTagRef}></textarea>
-                    <button onClick={() => {dispatch(addTag(addTagRef.current.value))}}>Add Tag</button>
-                </div>
-            </div>
             <div>
                 <button className={styles.addPostButton} onClick={() => { addPost(postData) }}>Добавить</button>
             </div>

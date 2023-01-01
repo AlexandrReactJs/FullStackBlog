@@ -4,9 +4,9 @@ export const getPostsCategory = async (req, res) => {
     try {
         const category = req.params.category;
 
-        const post = await postModel.find({category})
+        const post = await postModel.find({ category })
         res.send(post)
-        
+
     } catch (error) {
         console.log(error);
         res.status(500).json({
@@ -42,9 +42,37 @@ export const create = async (req, res) => {
 
 export const getAll = async (req, res) => {
     try {
-        const posts = await postModel.find().populate('user').exec();
 
-        res.json(posts)
+        const category = req.query.category;
+        if (!category) {
+            const page = req.query.page;
+            const pageSize = req.query.pageSize;
+
+            const from = page * pageSize - pageSize;
+            const before = page * pageSize
+
+            const posts = await postModel.find().populate('user').exec();
+            const result = posts.slice(from, before)
+
+            res.json({ posts: [...result], totalCount: posts.length })
+        } else {
+            const page = req.query.page;
+            const pageSize = req.query.pageSize;
+
+            const from = page * pageSize - pageSize;
+            const before = page * pageSize
+
+            const posts = await postModel.find({category}).populate('user').exec();
+            const result = posts.slice(from, before)
+
+            res.json({ posts: [...result], totalCount: posts.length })
+        }
+
+
+
+
+
+
 
     } catch (error) {
         console.log(error)
@@ -75,7 +103,7 @@ export const getOne = async (req, res) => {
                     })
                 }
 
-                if(!doc) {
+                if (!doc) {
                     return res.status(404).json({
                         message: 'Не удалось найти пост'
                     })
@@ -96,7 +124,7 @@ export const remove = async (req, res) => {
         {
             _id: postId
         },
-         
+
         res.json({
             statusCode: 0
         })
@@ -110,13 +138,13 @@ export const update = async (req, res) => {
         await postModel.updateOne({
             _id: postId
         },
-        {
-            title: req.body.title,
-            text: req.body.text,
-            imageUrl: req.body.imageUrl,
-            tags: req.body.tags,
-            user: req.userId,
-        }
+            {
+                title: req.body.title,
+                text: req.body.text,
+                imageUrl: req.body.imageUrl,
+                tags: req.body.tags,
+                user: req.userId,
+            }
         )
 
         res.json({
