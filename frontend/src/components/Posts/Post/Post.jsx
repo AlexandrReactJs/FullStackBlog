@@ -4,6 +4,8 @@ import viewsIcon from '../../../assets/icons/eye.png'
 import renderHTML from 'react-render-html'
 import { Link } from 'react-router-dom'
 
+import noImage from '../../../assets/icons/image/no-image.jpg'
+
 const Post = ({ title, text, tags, imageUrl, postId, createdAt }) => {
 
     let createdAtModified = createdAt.split('T')
@@ -24,7 +26,7 @@ const Post = ({ title, text, tags, imageUrl, postId, createdAt }) => {
                         <div className={styles.text}>{renderHTML(text)}</div>
                     </div>
                     <div>
-                        <img src={`http://localhost:4444${imageUrl}`} alt="" />
+                        <img src={ !imageUrl ? noImage : `http://localhost:4444${imageUrl}`} alt="" />
                     </div>
                     <div className={styles.otherInfo}>
                         <div className={styles.tags}>
