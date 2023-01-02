@@ -6,14 +6,22 @@ import Sidebar from './components/Sidebar/Sidebar';
 import FullpostContainer from './components/Fullpost/FullpostContainer';
 import PostsContainer from './components/Posts/PostsContainer';
 import PostsCategoryContainer from './components/PostsCategory/PostsCategoryContainer';
+import { useDispatch, useSelector } from "react-redux";
+import { postsSelector } from './Redux/Slices/PostsSlice';
+
+
+
 
 function App() {
   const navigate = useNavigate();
   const location = useLocation()
 
+  const {currentPage, pageSize, category, status} = useSelector(postsSelector)
+
+
   React.useEffect(() => {
     if (location.pathname === '/') {
-      navigate('/posts')
+      navigate(`/posts?page=${currentPage}&pageSize=${pageSize}&category=${category}`)
     }
 
   }, [navigate, location.pathname])

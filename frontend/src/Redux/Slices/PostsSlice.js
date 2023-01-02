@@ -5,8 +5,8 @@ export const fetchPosts = createAsyncThunk(
   'posts/fetchPosts',
 
   async (params) => {
-    const {currentPage, pageSize, category} = params
-    const response = await axios.get(`http://localhost:4444/posts?page=${currentPage}&pageSize=${pageSize}&category=${category}`);
+    const {page, pageSize, category} = params
+    const response = await axios.get(`http://localhost:4444/posts?page=${page}&pageSize=${pageSize}&category=${category}`);
     return response.data;
   
   }
