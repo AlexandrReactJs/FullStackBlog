@@ -3,9 +3,10 @@ import styles from './Posts.module.css';
 import {useSelector} from "react-redux"
 import Post from "./Post/Post";
 import { postsSelector } from "../../Redux/Slices/PostsSlice";
+import Pagination from "../Pagination/Pagination";
 
 const Posts = () => {
-    const posts = useSelector(postsSelector);
+    const {posts} = useSelector(postsSelector);
 
     return (
         <div className={styles.posts}>
@@ -16,6 +17,7 @@ const Posts = () => {
                     
                 </div>)
             }
+            <Pagination/>
         </div>
     )
 }

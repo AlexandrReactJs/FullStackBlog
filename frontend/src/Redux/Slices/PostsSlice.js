@@ -4,9 +4,11 @@ import axios from 'axios';
 export const fetchPosts = createAsyncThunk(
   'posts/fetchPosts',
 
-  async () => {
-    const response = await axios.get('http://localhost:4444/posts?page=1&pageSize=4');
-    return response.data.posts;
+  async (params) => {
+    const {currentPage, pageSize, category} = params
+    const response = await axios.get(`http://localhost:4444/posts?page=${currentPage}&pageSize=${pageSize}&category=${category}`);
+    return response.data;
+  
   }
 
 );
@@ -15,6 +17,10 @@ export const fetchPosts = createAsyncThunk(
 
 const initialState = {
   posts: [],
+  currentPage: 1,
+  totalCount: 0,
+  pageSize: 4,
+  category: '',
   status: 'Loading', /*Loading, Ok, Error*/
 }
 
@@ -25,12 +31,20 @@ export const postsSlice = createSlice({
   reducers:{
     setPosts: (state, action) => {
       state.posts = action.payload
+    },
+    setCurrentPage: (state, action) => {
+      state.currentPage = action.payload;
+    },
+
+    setCategory: (state, action) => {
+      state.category = action.payload;
     }
   },
 
   extraReducers: {
     [fetchPosts.fulfilled]: (state, action) => {
-      state.posts = action.payload;
+      state.posts = action.payload.posts;
+      state.totalCount = action.payload.totalCount;
       state.status = 'Ok';
     },
     [fetchPosts.pending]: (state, action) => {
@@ -45,9 +59,9 @@ export const postsSlice = createSlice({
   }
 })
 
-export const postsSelector = (state) => state.postsSlice.posts;
+export const postsSelector = (state) => state.postsSlice;
 
 
-export const { setPosts } = postsSlice.actions;
+export const { setPosts, setCurrentPage, setCategory } = postsSlice.actions;
 
 export default postsSlice.reducer;

@@ -1,4 +1,59 @@
 import postModel from '../models/Post.js'
+import categoriesModel from '../models/Categories.js'
+
+export const removeCategory = async (req, res) => {
+    try {
+        const categoryId = req.params.id;
+
+        await categoriesModel.findByIdAndRemove(
+            {
+                _id: categoryId
+            },
+    
+            res.json({
+                statusCode: 0
+            })
+        );
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({
+            message: 'Не удалось удалить категорию'
+        })
+    }
+}
+
+export const getCategories = async (req, res) => {
+    try {
+        
+        const categories = await categoriesModel.find();
+        res.json(categories)
+
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({
+            message: 'Не удалось получить категории'
+        })
+    }
+}
+
+export const createCategory = async (req, res) => {
+    try {
+        const doc = new categoriesModel({
+            name: req.body.name,
+            engName: req.body.engName
+        })
+
+        const category = await doc.save();
+
+        res.json(category)
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({
+            message: 'Не удалось создать категорию'
+        })
+
+    }
+}
 
 export const getPostsCategory = async (req, res) => {
     try {

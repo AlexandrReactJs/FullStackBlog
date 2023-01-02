@@ -4,7 +4,7 @@ import viewsIcon from '../../../assets/icons/eye.png'
 import renderHTML from 'react-render-html'
 import { Link } from 'react-router-dom'
 
-import noImage from '../../../assets/icons/image/no-image.jpg'
+import noImage from '../../../assets/image/no-image.png'
 
 const Post = ({ title, text, tags, imageUrl, postId, createdAt }) => {
 

@@ -4,19 +4,20 @@
     transition: all 0.5s linear;
 }
 
-.sidebarContainer {
+
+.links{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    list-style-type: none;
 }
-
 
 .link {
     padding: 20px;
     margin-left: 20px;
 }
 
-.link a {
+.link li {
     color: #fff;
     transition: all 0.2s linear;
 
@@ -29,7 +30,7 @@
     transition: all 0.3s ease-in-out;
 }
 
-.link a:hover~.underline {
+.link li:hover~.underline {
 
     width: 100%;
 }

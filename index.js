@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 import { registerValidation, loginValidation, postCreateValidation } from './validations/validations.js';
 import checkAuth from './utils/checkAuth.js';
 import { authMe, login, register } from './controllers/UserController.js';
-import { create, getAll, getOne, getPostsCategory, remove, update } from './controllers/PostController.js';
+import { create, getAll, getOne, getPostsCategory, remove, update, createCategory, getCategories, removeCategory } from './controllers/PostController.js';
 import checkValidationErorr from './utils/checkValidationErorr.js';
 import cors from 'cors';
 
@@ -55,6 +55,10 @@ app.get('/posts/:id', getOne)
 app.post('/posts', checkAuth, postCreateValidation, checkValidationErorr, create)
 app.delete('/posts/:id', checkAuth, remove)
 app.patch('/posts/:id', checkAuth, postCreateValidation, checkValidationErorr, update)
+
+app.post('/categories', createCategory)
+app.get('/categories', getCategories)
+app.delete('/categories/:id', removeCategory)
 
 
 app.listen(4444, (err) => {
