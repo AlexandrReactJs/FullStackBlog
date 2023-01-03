@@ -2,12 +2,12 @@ import React from "react";
 import styles from './Pagination.module.css'
 import { useSelector, useDispatch } from "react-redux";
 import { postsSelector } from "../../Redux/Slices/PostsSlice";
-import { setCurrentPage } from "../../Redux/Slices/PostsSlice";
 
 
-const Pagination = () => {
+
+const Pagination = ({totalCount, pageSize, setCurrentPage}) => {
     const dispatch = useDispatch()
-    const {totalCount,  pageSize} = useSelector(postsSelector)
+    
     
     let pageCount = Math.ceil(totalCount / pageSize)
     let pages = []
@@ -18,7 +18,7 @@ const Pagination = () => {
 
     return(
         <div className={styles.Pagination}>
-            {pages.map(el => <p onClick={() => {dispatch(setCurrentPage(el))}}>{el}</p>)}
+            {pages.map(el => <p className={styles.pageCount} onClick={() => {dispatch(setCurrentPage(el))}}>{el}</p>)}
         </div>
     )
 }

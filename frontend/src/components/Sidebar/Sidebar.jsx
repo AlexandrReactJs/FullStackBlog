@@ -2,7 +2,6 @@ import React from 'react';
 import styles from './Sidebar.module.css';
 import { setCategories, sidebarSelector } from '../../Redux/Slices/SidebarSlice';
 import { useSelector, useDispatch } from 'react-redux';
-import { sidebarSlice } from '../../Redux/Slices/SidebarSlice';
 import { setCategory } from '../../Redux/Slices/PostsSlice';
 import axios from 'axios';
 

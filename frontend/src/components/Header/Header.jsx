@@ -14,7 +14,7 @@ const Header = () => {
         <div className={styles.Header} style={{opacity: `${opacity}`}}>
             <div className={styles.headerWrapper}>
                 <div onClick={() => {dispatch(setCategory(''))}} className={styles.headerLogo}>
-                    <Link className={styles.headerLink} ><h3>GAVRILOFF BLOG</h3></Link>
+                    <Link className={styles.headerLink} to='/' ><h3>GAVRILOFF BLOG</h3></Link>
                 </div>
                 
             </div>

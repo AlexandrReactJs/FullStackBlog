@@ -1,4 +1,24 @@
 .Pagination{
     display: flex;
     flex-direction: row;
+    justify-content: center;
+}
+
+.pageCount{
+    display: flex;
+    flex-direction: row;
+    color: #10bf34;
+    font-family: source-code-pro, 'Courier New';
+    font-weight: 700;
+    font-size: 18px;
+    margin-right: 8px;
+    padding: 5px 10px;
+    border: 2px solid #10bf34;
+    border-radius: 50%;
+    transition: all 0.2s linear;
+}
+
+.pageCount:hover{
+    background-color: #10bf34;
+    color:#fff;
 }

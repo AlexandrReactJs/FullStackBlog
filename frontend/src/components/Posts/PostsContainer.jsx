@@ -1,14 +1,13 @@
 import React from "react";
 import Posts from "./Posts";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { fetchPosts } from "../../Redux/Slices/PostsSlice";
-import { postsSelector } from "../../Redux/Slices/PostsSlice";
+import { postsSelector} from "../../Redux/Slices/PostsSlice";
 import qs from 'qs';
 
 const PostsContainer = () => {
     const navigate = useNavigate();
-    const location = useLocation();
     const dispatch = useDispatch();
     const {currentPage, pageSize, category, status} = useSelector(postsSelector)
 
