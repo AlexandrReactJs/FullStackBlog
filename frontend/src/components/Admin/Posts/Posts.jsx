@@ -17,12 +17,7 @@ const Posts = () => {
 
     const {currentPage, pageSize, totalCount, category, adminPosts} = useSelector(state => state.adminPostsSlice)
 
-    React.useEffect(() => {
-        if (location.pathname === '/admin/posts' ) {
-            navigate(`/admin/posts?page=${currentPage}&pageSize=${pageSize}&category=${category}`)
-        }
-
-    }, [navigate, location.pathname])
+    
 
 
     React.useEffect(() => {

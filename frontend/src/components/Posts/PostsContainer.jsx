@@ -41,10 +41,6 @@ const PostsContainer = () => {
 
 
 
-    if(status === 'Loading'){
-        return <h1>Loading ...</h1>
-    }
-
     return(
         <Posts/>
         

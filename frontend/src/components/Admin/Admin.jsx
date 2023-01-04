@@ -9,24 +9,12 @@ import { Routes, Route } from 'react-router-dom';
 import AddPost from './AddPost/AddPost';
 import AdminSidebar from './AdminSidebar/AdminSidebar';
 import RefactoringPost from './RefactoringPost/RefactoringPost';
-import { useNavigate, useLocation } from 'react-router-dom';
 
 
 const Admin = () => {
-    const navigate = useNavigate();
-    const location = useLocation()
-
-    React.useEffect(() => {
-        if (location.pathname === '/admin/posts' ) {
-            navigate(`/admin/posts?page=${currentPage}&pageSize=${pageSize}&category=${category}`)
-        }
-
-    }, [navigate, location.pathname])
-
-
-    const { currentPage, pageSize, totalCount, category, adminPosts } = useSelector(state => state.adminPostsSlice)
-
     const disptach = useDispatch();
+
+    
     const isAuth = useSelector(state => state.adminSlice.isAuth);
     const JWTToken = document.cookie;
     React.useEffect(() => {
