@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from './Post.module.css';
-import viewsIcon from '../../../assets/icons/eye.png'
 import renderHTML from 'react-render-html'
 import { Link } from 'react-router-dom'
 

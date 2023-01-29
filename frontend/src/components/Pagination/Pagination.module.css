@@ -1,7 +1,22 @@
+button{
+    background: none;
+    border: unset;
+    
+}
+
+.paginationWrapper{
+    width: ;
+}
+
 .Pagination{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
+}
+.pagesBt{
+    display: flex;
+    flex-direction: row;
 }
 
 .pageCount{
@@ -10,15 +25,25 @@
     color: #10bf34;
     font-family: source-code-pro, 'Courier New';
     font-weight: 700;
-    font-size: 18px;
+    font-size: 24px;
     margin-right: 8px;
-    padding: 5px 10px;
-    border: 2px solid #10bf34;
-    border-radius: 50%;
     transition: all 0.2s linear;
+    box-sizing: border-box;
+    width: 20px;
+
 }
 
 .pageCount:hover{
-    background-color: #10bf34;
-    color:#fff;
+    border-bottom: 2px solid #10bf34;
+}
+
+.prevBt img{
+    Transform: scale(-1, 1);
+    width: 30px;
+    height: 30px;
+}
+
+.nextBt img{
+    width: 30px;
+    height: 30px;
 }

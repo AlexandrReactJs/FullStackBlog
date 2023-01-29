@@ -2,9 +2,8 @@ import React from 'react'
 import styles from './Posts.module.css'
 import Post from './Post/Post';
 import { fetchPosts } from '../../../Redux/Slices/AdminSlices/AdminPostsSlice';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import axios from "axios"
 import Pagination from '../../Pagination/Pagination';
 import qs from 'qs';
 import { setCurrentPage } from '../../../Redux/Slices/AdminSlices/AdminPostsSlice';
@@ -12,7 +11,6 @@ import { setCurrentPage } from '../../../Redux/Slices/AdminSlices/AdminPostsSlic
 const Posts = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const location = useLocation();
     const isMount = React.useRef(false);
 
     const {currentPage, pageSize, totalCount, category, adminPosts} = useSelector(state => state.adminPostsSlice)

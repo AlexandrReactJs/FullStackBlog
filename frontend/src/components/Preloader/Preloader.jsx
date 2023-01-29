@@ -2,6 +2,7 @@ import React from 'react'
 import ContentLoader from "react-content-loader"
 
 
+
 const Preloader = (props) => {
   return (
     <ContentLoader
@@ -9,7 +10,7 @@ const Preloader = (props) => {
     width={595}
     height={451}
     viewBox="0 0 595 451"
-    backgroundColor="#f3f3f3"
+    backgroundColor="#c2c2c2"
     foregroundColor="#ecebeb"
     {...props}
   >

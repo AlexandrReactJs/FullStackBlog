@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 
 const AdminSidebar = () => {
 
-  const { currentPage, pageSize, totalCount, category, adminPosts } = useSelector(state => state.adminPostsSlice)
+  const { currentPage, pageSize, category } = useSelector(state => state.adminPostsSlice)
 
   return (
     <div>

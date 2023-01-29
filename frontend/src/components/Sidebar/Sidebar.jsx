@@ -26,13 +26,12 @@ const Sidebar = () => {
     <div className={styles.Sidebar} style={{ opacity: `${opacity}` }}>
       <div className={styles.sidebarContainer}>
         <ul className={styles.links}>
-
-
-
-          {categories.map(el => <div onClick={() => {dispatch(setCategory(el.engName))}} className={styles.link}>
-                                  <li>{el.name}</li>
-                                  <div className={styles.underline}></div>
-                                </div>)}
+          {categories.map((el, i) =>
+            <div key={i} onClick={() => { dispatch(setCategory(el.engName)) }} className={styles.link}>
+              <li>{el.name}</li>
+              <div className={styles.underline}></div>
+            </div>)
+          }
 
         </ul>
       </div>
