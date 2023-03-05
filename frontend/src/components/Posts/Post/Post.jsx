@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './Post.module.css';
+import styles from './Post.module.scss';
 import renderHTML from 'react-render-html'
 import { Link } from 'react-router-dom'
 
@@ -25,7 +25,7 @@ const Post = ({ title, text, tags, imageUrl, postId, createdAt }) => {
 
                         <div className={styles.text}>{renderHTML(text)}</div>
                     </div>
-                    <div>
+                    <div className={styles.previewImg}>
                         <img src={ !imageUrl ? noImage : `http://localhost:4444${imageUrl}`} alt="" />
                     </div>
                     <div className={styles.otherInfo}>

@@ -6,7 +6,7 @@ import { fetchPosts } from "../../Redux/Slices/PostsSlice";
 import { postsSelector} from "../../Redux/Slices/PostsSlice";
 import qs from 'qs';
 import Preloader from "../Preloader/Preloader";
-import styles from '../Posts/Posts.module.css'
+import styles from '../Posts/Posts.module.scss'
 
 const PostsContainer = () => {
     const navigate = useNavigate();

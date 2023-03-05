@@ -5,10 +5,12 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route} from "react-router-dom";
 import { Provider } from 'react-redux';
-import {store} from './Redux/store'
+import store from './Redux/store'
 import Admin from './components/Admin/Admin';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const rootElement = document.getElementById('root')
+
+const root = ReactDOM.createRoot(rootElement as HTMLElement);
 root.render(
   
     <BrowserRouter>

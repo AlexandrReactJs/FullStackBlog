@@ -1,11 +1,11 @@
 import React from 'react';
-import styles from './Header.module.css';
+import styles from './Header.module.scss';
 import {Link} from 'react-router-dom';
-import {useDispatch} from 'react-redux'
+import { useAppDispatch } from '../../hooks';
 import { setCategory } from '../../Redux/Slices/PostsSlice'
 
-const Header = () => {
-    const dispatch = useDispatch();
+const Header : React.FC = () => {
+    const dispatch = useAppDispatch();
     const [opacity, setOpacity] = React.useState(0)
     React.useEffect(() => {
         setOpacity(1)

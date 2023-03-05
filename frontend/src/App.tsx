@@ -1,23 +1,24 @@
-import './App.css';
+import './App.scss';
 import React from 'react';
 import Header from './components/Header/Header';
 import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import Sidebar from './components/Sidebar/Sidebar';
 import FullpostContainer from './components/Fullpost/FullpostContainer';
 import PostsContainer from './components/Posts/PostsContainer';
-import PostsCategoryContainer from './components/PostsCategory/PostsCategoryContainer';
-import { useSelector } from "react-redux";
+import {useAppSelector} from './hooks'
 import { postsSelector } from './Redux/Slices/PostsSlice';
 
 
 
+const App: React.FC = () => {
 
-function App() {
+
   const navigate = useNavigate();
   const location = useLocation()
 
-  const {currentPage, pageSize, category} = useSelector(postsSelector)
+  const {currentPage, pageSize, category} = useAppSelector(postsSelector)
 
+ 
 
   React.useEffect(() => {
     if (location.pathname === '/') {
@@ -35,7 +36,6 @@ function App() {
         <Routes>
           <Route path='/posts' element={<PostsContainer />} />
           <Route path='/posts/:id' element={<FullpostContainer />} />
-          <Route path='/postsCategory/:category' element={<PostsCategoryContainer/>}/>
         </Routes>
       </div>
     </div>

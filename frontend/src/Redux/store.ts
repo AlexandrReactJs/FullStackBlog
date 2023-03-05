@@ -6,7 +6,7 @@ import adminPostsSlice from './Slices/AdminSlices/AdminPostsSlice';
 import adminRefactoringPostSlice from './Slices/AdminSlices/AdminRefactoringPostSlice';
 import sidebarSlice  from './Slices/SidebarSlice';
 
-export const store = configureStore({
+const store = configureStore({
   reducer: {
     postsSlice,
     adminSlice,
@@ -17,3 +17,7 @@ export const store = configureStore({
 
   },
 })
+
+export default store;
+export type RootState = ReturnType<typeof store.getState>
+export type AppDispatch = typeof store.dispatch

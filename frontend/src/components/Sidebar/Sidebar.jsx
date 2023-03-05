@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Sidebar.module.css';
+import styles from './Sidebar.module.scss';
 import { setCategories, sidebarSelector } from '../../Redux/Slices/SidebarSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import { setCategory } from '../../Redux/Slices/PostsSlice';
