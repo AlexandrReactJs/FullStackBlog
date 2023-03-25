@@ -100,14 +100,13 @@ export const getAll = async (req, res) => {
 
         const category = req.query.category;
         if (!category) {
-            const page = req.query.page;
-            const pageSize = req.query.pageSize;
+            const start = req.query.start
+            const end = req.query.end;
 
-            const from = page * pageSize - pageSize;
-            const before = page * pageSize
+            
 
             const posts = await postModel.find().populate('user').exec();
-            const result = posts.slice(from, before)
+            const result = posts.slice(start, end)
 
             res.json({ posts: [...result], totalCount: posts.length })
         } else {
